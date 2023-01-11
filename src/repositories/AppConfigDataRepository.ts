@@ -1,6 +1,3 @@
+import { BaseRepository } from './base/BaseRepository';
 
-import { BaseRepository } from "./base/BaseRepository";
-
-export class AppConfigRepository extends BaseRepository {
-
-}
+export class AppConfigRepository extends BaseRepository {}

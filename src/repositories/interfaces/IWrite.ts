@@ -1,46 +1,54 @@
-import { Commands } from "@/commands";
-import { 
+import type {
   CreateApplicationCommandInput,
   CreateApplicationCommandOutput,
-
-  DeleteApplicationCommandInput,
-  DeleteApplicationCommandOutput,
-
-  CreateEnvironmentCommandInput,
-  CreateEnvironmentCommandOutput,
-
-  DeleteEnvironmentCommandInput,
-  DeleteEnvironmentCommandOutput,
-
   CreateConfigurationProfileCommandInput,
   CreateConfigurationProfileCommandOutput,
-
-  DeleteConfigurationProfileCommandInput,
-  DeleteConfigurationProfileCommandOutput,
-
   CreateDeploymentStrategyCommandInput,
   CreateDeploymentStrategyCommandOutput,
-
+  CreateEnvironmentCommandInput,
+  CreateEnvironmentCommandOutput,
+  DeleteApplicationCommandInput,
+  DeleteApplicationCommandOutput,
+  DeleteConfigurationProfileCommandInput,
+  DeleteConfigurationProfileCommandOutput,
   DeleteDeploymentStrategyCommandInput,
   DeleteDeploymentStrategyCommandOutput,
-} from "@aws-sdk/client-appconfig";
+  DeleteEnvironmentCommandInput,
+  DeleteEnvironmentCommandOutput,
+} from '@aws-sdk/client-appconfig';
+
+import type { Commands } from '@/commands';
 
 export interface IWrite {
+  createApplication(
+    inputCommand: CreateApplicationCommandInput
+  ): Promise<Commands.OutputCommand<CreateApplicationCommandOutput>>;
 
-  createApplication(inputCommand: CreateApplicationCommandInput): Promise<Commands.OutputCommand<CreateApplicationCommandOutput>>;
+  deleteApplication(
+    inputCommand: DeleteApplicationCommandInput
+  ): Promise<Commands.OutputCommand<DeleteApplicationCommandOutput>>;
 
-  deleteApplication(inputCommand: DeleteApplicationCommandInput): Promise<Commands.OutputCommand<DeleteApplicationCommandOutput>>;
-  
-  createEnvironment(inputCommand: CreateEnvironmentCommandInput): Promise<Commands.OutputCommand<CreateEnvironmentCommandOutput>>;
+  createEnvironment(
+    inputCommand: CreateEnvironmentCommandInput
+  ): Promise<Commands.OutputCommand<CreateEnvironmentCommandOutput>>;
 
-  deleteEnvironment(inputCommand: DeleteEnvironmentCommandInput): Promise<Commands.OutputCommand<DeleteEnvironmentCommandOutput>>;
+  deleteEnvironment(
+    inputCommand: DeleteEnvironmentCommandInput
+  ): Promise<Commands.OutputCommand<DeleteEnvironmentCommandOutput>>;
 
-  createConfigurationProfile(inputCommand: CreateConfigurationProfileCommandInput): Promise<Commands.OutputCommand<CreateConfigurationProfileCommandOutput>>;
+  createConfigurationProfile(
+    inputCommand: CreateConfigurationProfileCommandInput
+  ): Promise<Commands.OutputCommand<CreateConfigurationProfileCommandOutput>>;
 
-  deleteConfigurationProfile(inputCommand: DeleteConfigurationProfileCommandInput): Promise<Commands.OutputCommand<DeleteConfigurationProfileCommandOutput>>;
+  deleteConfigurationProfile(
+    inputCommand: DeleteConfigurationProfileCommandInput
+  ): Promise<Commands.OutputCommand<DeleteConfigurationProfileCommandOutput>>;
 
-  createDeploymentStrategy(inputCommand: CreateDeploymentStrategyCommandInput): Promise<Commands.OutputCommand<CreateDeploymentStrategyCommandOutput>>;
+  createDeploymentStrategy(
+    inputCommand: CreateDeploymentStrategyCommandInput
+  ): Promise<Commands.OutputCommand<CreateDeploymentStrategyCommandOutput>>;
 
-  deleteDeploymentStrategy(inputCommand: DeleteDeploymentStrategyCommandInput): Promise<Commands.OutputCommand<DeleteDeploymentStrategyCommandOutput>>;
-
+  deleteDeploymentStrategy(
+    inputCommand: DeleteDeploymentStrategyCommandInput
+  ): Promise<Commands.OutputCommand<DeleteDeploymentStrategyCommandOutput>>;
 }

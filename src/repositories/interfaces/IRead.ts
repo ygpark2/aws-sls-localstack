@@ -1,26 +1,30 @@
-import { Commands } from "@/commands";
-import {
+import type {
   GetApplicationCommandInput,
   GetApplicationCommandOutput,
-
-  GetEnvironmentCommandInput,
-  GetEnvironmentCommandOutput,
-
   GetConfigurationProfileCommandInput,
   GetConfigurationProfileCommandOutput,
-
   GetDeploymentStrategyCommandInput,
   GetDeploymentStrategyCommandOutput,
-} from "@aws-sdk/client-appconfig";
+  GetEnvironmentCommandInput,
+  GetEnvironmentCommandOutput,
+} from '@aws-sdk/client-appconfig';
+
+import type { Commands } from '@/commands';
 
 export interface IRead {
+  getApplication(
+    inputCommand: GetApplicationCommandInput
+  ): Promise<Commands.OutputCommand<GetApplicationCommandOutput>>;
 
-  getApplication(inputCommand: GetApplicationCommandInput): Promise<Commands.OutputCommand<GetApplicationCommandOutput>>;
+  getEnvironment(
+    inputCommand: GetEnvironmentCommandInput
+  ): Promise<Commands.OutputCommand<GetEnvironmentCommandOutput>>;
 
-  getEnvironment(inputCommand: GetEnvironmentCommandInput): Promise<Commands.OutputCommand<GetEnvironmentCommandOutput>>;
+  getConfigurationProfile(
+    inputCommand: GetConfigurationProfileCommandInput
+  ): Promise<Commands.OutputCommand<GetConfigurationProfileCommandOutput>>;
 
-  getConfigurationProfile(inputCommand: GetConfigurationProfileCommandInput): Promise<Commands.OutputCommand<GetConfigurationProfileCommandOutput>>;
-
-  getDeploymentStrategy(inputCommand: GetDeploymentStrategyCommandInput): Promise<Commands.OutputCommand<GetDeploymentStrategyCommandOutput>>;
-
+  getDeploymentStrategy(
+    inputCommand: GetDeploymentStrategyCommandInput
+  ): Promise<Commands.OutputCommand<GetDeploymentStrategyCommandOutput>>;
 }

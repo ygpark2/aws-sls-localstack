@@ -1,6 +1,4 @@
-
 export namespace Commands {
-
   export interface InputCommand<T> {
     defaultJsonFile?: string;
     dataCmd: T;
@@ -11,5 +9,4 @@ export namespace Commands {
     message?: string;
     dataCmd: T;
   }
-
 }
