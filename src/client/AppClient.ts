@@ -76,7 +76,7 @@ export class AppClient {
               output.dataCmd = JSON.parse(data as string) as OT;
               reject(output);
             },
-            (fileErr) => {
+            (_fileErr) => {
               // error handling.
               output.code = 303;
               output.message = 'File reading error!';
@@ -86,7 +86,7 @@ export class AppClient {
         })
         .finally(() => {
           // finally.
-          console.log('************* final *************');
+          // console.log('************* final *************');
         });
     });
   }

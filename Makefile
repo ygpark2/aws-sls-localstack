@@ -1,4 +1,10 @@
-.PHONY: create-application
+.PHONY: start
+
+up:
+	docker compose --env-file .docker/docker.env up
+
+start:
+	docker compose --env-file .docker/docker.env up --build --remove-orphans
 
 create-application:
 	curl -d "@data/test/createApplication.json" -X POST http://localhost:4000/application

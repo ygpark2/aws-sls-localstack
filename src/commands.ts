@@ -1,4 +1,4 @@
-export namespace Commands {
+export module Commands {
   export interface InputCommand<T> {
     defaultJsonFile?: string;
     dataCmd: T;

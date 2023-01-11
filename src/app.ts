@@ -13,14 +13,11 @@ import helmet from 'helmet';
 
 import { AppClient } from './client/AppClient';
 import { AppConfigRepository } from './repositories/AppConfigDataRepository';
-import { setupSwagger } from './swagger';
 
 const appClient = new AppClient();
 const baseRepository = new AppConfigRepository(appClient);
 
 const app = express();
-
-setupSwagger(app);
 
 app.use(json());
 app.use(helmet());
